@@ -35,7 +35,7 @@ export default function Login() {
       <section className="w-full max-w-sm">
         <form onSubmit={submit} className="w-full bg-card border rounded-lg p-6 shadow-elevated">
           <header className="text-center mb-4">
-            <img src="/lovable-uploads/logo-guarnice-frotas-transparent.png" alt="Logo Guarnicé Frotas" className="h-14 mx-auto mb-2 drop-shadow-md" loading="lazy" decoding="async" />
+            <img src="/lovable-uploads/logo-guarnice-frotas-transparent@2x.png" alt="Logo Guarnicé Frotas" className="h-20 mx-auto mb-3 rounded-md ring-1 ring-border/50 drop-shadow-lg brightness-110 contrast-125" loading="lazy" decoding="async" />
             <h1 className="text-2xl font-semibold">Acessar Guarnicé Frotas</h1>
           </header>
           <div className="space-y-4">
