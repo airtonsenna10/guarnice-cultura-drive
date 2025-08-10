@@ -4,10 +4,12 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { seed } from "@/services/seed";
 import { useAuth } from "@/contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const { toast } = useToast();
   const { login } = useAuth();
+  const navigate = useNavigate();
   const [form, setForm] = useState({ login: "", senha: "" });
 
   useEffect(() => {
@@ -21,7 +23,7 @@ export default function Login() {
       toast({ title: "Falha no login", description: "Credenciais inválidas.", variant: "destructive" as any });
     } else {
       toast({ title: "Bem-vindo!", description: "Login realizado com sucesso." });
-      window.location.href = "/dashboard";
+      navigate("/dashboard");
     }
   };
 

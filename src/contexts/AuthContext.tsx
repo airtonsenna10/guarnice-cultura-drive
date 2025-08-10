@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
+import React, { createContext, useContext, useMemo, useState } from "react";
 import { listAll } from "@/services/localdb";
 import { Usuario, PerfilAcesso } from "@/services/types";
 
@@ -18,13 +18,10 @@ async function sha(text: string) {
 }
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [user, setUser] = useState<AuthContextValue["user"]>(null);
-
-  useEffect(() => {
+  const [user, setUser] = useState<AuthContextValue["user"]>(() => {
     const saved = localStorage.getItem("auth.user");
-    if (saved) setUser(JSON.parse(saved));
-  }, []);
-
+    return saved ? JSON.parse(saved) : null;
+  });
   const login = async (login: string, senha: string) => {
     const users = listAll<Usuario>("usuarios");
     const found = users.find((u) => u.login === login);
