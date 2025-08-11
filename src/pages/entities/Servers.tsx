@@ -1,10 +1,9 @@
-import TopNav from "@/components/layout/TopNav";
 import EntityManager from "@/components/EntityManager";
 
 export default function ServersPage() {
   return (
     <div className="min-h-screen">
-      <TopNav />
+      
       <EntityManager
         storageKey="servidores"
         title="Servidores"

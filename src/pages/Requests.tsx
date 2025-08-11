@@ -1,4 +1,3 @@
-import TopNav from "@/components/layout/TopNav";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -39,7 +38,7 @@ export default function Requests() {
 
   return (
     <div className="min-h-screen">
-      <TopNav />
+      
       <main className="container mx-auto py-6 max-w-3xl">
         <h1 className="text-2xl font-semibold mb-4">Solicitar Veículo</h1>
         <form onSubmit={submit} className="space-y-4 bg-card border rounded-lg p-6">

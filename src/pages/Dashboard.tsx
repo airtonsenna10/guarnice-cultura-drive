@@ -1,4 +1,3 @@
-import TopNav from "@/components/layout/TopNav";
 import { useEffect, useMemo, useState } from "react";
 import { listAll } from "@/services/localdb";
 import { Veiculo, SolicitacaoVeiculo } from "@/services/types";
@@ -29,7 +28,7 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen">
-      <TopNav />
+      
       <main className="container mx-auto py-6">
         <section className="rounded-xl p-6 bg-brand-gradient text-primary-foreground shadow-elevated">
           <h1 className="text-2xl font-semibold">Bem-vindo ao Guarnicé Frotas</h1>

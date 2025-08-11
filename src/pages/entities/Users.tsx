@@ -1,11 +1,10 @@
-import TopNav from "@/components/layout/TopNav";
 import EntityManager from "@/components/EntityManager";
 import { hash } from "@/services/localdb";
 
 export default function UsersPage() {
   return (
     <div className="min-h-screen">
-      <TopNav />
+      
       <EntityManager
         storageKey="usuarios"
         title="Usuários"

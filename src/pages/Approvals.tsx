@@ -1,4 +1,3 @@
-import TopNav from "@/components/layout/TopNav";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { listAll, updateItem } from "@/services/localdb";
@@ -33,7 +32,7 @@ export default function Approvals() {
 
   return (
     <div className="min-h-screen">
-      <TopNav />
+      
       <main className="container mx-auto py-6">
         <h1 className="text-2xl font-semibold mb-4">Autorizações Pendentes</h1>
         <div className="grid gap-4">

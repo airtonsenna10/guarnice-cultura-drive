@@ -18,6 +18,7 @@ import NotFound from "./pages/NotFound";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ProtectedRoute from "@/routes/ProtectedRoute";
 import RoleRoute from "@/routes/RoleRoute";
+import AppLayout from "@/components/layout/AppLayout";
 
 const queryClient = new QueryClient();
 
@@ -31,16 +32,18 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Navigate to="/login" replace />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-            <Route path="/solicitacoes" element={<ProtectedRoute><Requests /></ProtectedRoute>} />
-            <Route path="/aprovacoes" element={<ProtectedRoute><RoleRoute allow={["gestor", "administrador"]}><Approvals /></RoleRoute></ProtectedRoute>} />
-            <Route path="/veiculos" element={<ProtectedRoute><VehiclesPage /></ProtectedRoute>} />
-            <Route path="/servidores" element={<ProtectedRoute><ServersPage /></ProtectedRoute>} />
-            <Route path="/usuarios" element={<ProtectedRoute><RoleRoute allow={["administrador"]}><UsersPage /></RoleRoute></ProtectedRoute>} />
-            <Route path="/setores" element={<ProtectedRoute><SectorsPage /></ProtectedRoute>} />
-            <Route path="/motoristas" element={<ProtectedRoute><DriversPage /></ProtectedRoute>} />
-            <Route path="/manutencoes" element={<ProtectedRoute><MaintenancePage /></ProtectedRoute>} />
-            <Route path="/alertas" element={<ProtectedRoute><AlertsPage /></ProtectedRoute>} />
+            <Route element={<ProtectedRoute><AppLayout /></ProtectedRoute>}>
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/solicitacoes" element={<Requests />} />
+              <Route path="/aprovacoes" element={<RoleRoute allow={["gestor", "administrador"]}><Approvals /></RoleRoute>} />
+              <Route path="/veiculos" element={<VehiclesPage />} />
+              <Route path="/servidores" element={<ServersPage />} />
+              <Route path="/usuarios" element={<RoleRoute allow={["administrador"]}><UsersPage /></RoleRoute>} />
+              <Route path="/setores" element={<SectorsPage />} />
+              <Route path="/motoristas" element={<DriversPage />} />
+              <Route path="/manutencoes" element={<MaintenancePage />} />
+              <Route path="/alertas" element={<AlertsPage />} />
+            </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>
