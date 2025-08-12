@@ -11,18 +11,38 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { useAuth } from "@/contexts/AuthContext";
+import {
+  LayoutDashboard,
+  FileText,
+  BadgeCheck,
+  Car,
+  Wrench,
+  Bell,
+  Users,
+  IdCard,
+  UserCog,
+  Building2,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-const items = [
-  { title: "Dashboard", url: "/dashboard" },
-  { title: "Solicitações", url: "/solicitacoes" },
-  { title: "Autorizações", url: "/aprovacoes", role: "gestorOrAdmin" as const },
-  { title: "Veículos", url: "/veiculos" },
-  { title: "Manutenções", url: "/manutencoes" },
-  { title: "Alertas", url: "/alertas" },
-  { title: "Servidores", url: "/servidores" },
-  { title: "Motoristas", url: "/motoristas" },
-  { title: "Usuários", url: "/usuarios", role: "admin" as const },
-  { title: "Setores", url: "/setores" },
+type NavItem = {
+  title: string;
+  url: string;
+  role?: "admin" | "gestorOrAdmin";
+  icon: LucideIcon;
+};
+
+const items: NavItem[] = [
+  { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
+  { title: "Solicitações", url: "/solicitacoes", icon: FileText },
+  { title: "Autorizações", url: "/aprovacoes", role: "gestorOrAdmin" as const, icon: BadgeCheck },
+  { title: "Veículos", url: "/veiculos", icon: Car },
+  { title: "Manutenções", url: "/manutencoes", icon: Wrench },
+  { title: "Alertas", url: "/alertas", icon: Bell },
+  { title: "Servidores", url: "/servidores", icon: Users },
+  { title: "Motoristas", url: "/motoristas", icon: IdCard },
+  { title: "Usuários", url: "/usuarios", role: "admin" as const, icon: UserCog },
+  { title: "Setores", url: "/setores", icon: Building2 },
 ];
 
 export default function AppSidebar() {
@@ -37,8 +57,8 @@ export default function AppSidebar() {
     return true;
   };
 
-  const linkCls = ({ isActive }: { isActive: boolean }) =>
-    isActive ? "bg-muted text-primary font-medium" : "hover:bg-muted/50";
+const linkCls = ({ isActive }: { isActive: boolean }) =>
+    (isActive ? "bg-muted text-primary font-medium" : "hover:bg-muted/50") + " flex items-center gap-2";
 
   return (
     <Sidebar>
@@ -51,7 +71,8 @@ export default function AppSidebar() {
                 <SidebarMenuItem key={item.url}>
                   <SidebarMenuButton asChild>
                     <NavLink to={item.url} end className={linkCls}>
-                      <span>{item.title}</span>
+                      <item.icon className="h-4 w-4 text-current" aria-hidden="true" />
+                      {!collapsed && <span>{item.title}</span>}
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
