@@ -32,7 +32,7 @@ export default function Dashboard() {
       <main className="container mx-auto py-6">
         <section className="rounded-xl p-6 bg-brand-gradient text-primary-foreground shadow-elevated">
           <h1 className="text-2xl font-semibold">Bem-vindo ao Guarnicé Frotas</h1>
-          <p className="opacity-90">Cultura + funcionalidade na gestão da frota escolar.</p>
+          <p className="opacity-90">Mobilidade com Ritmo Maranhense.</p>
         </section>
 
         <section className="grid md:grid-cols-4 gap-4 mt-6">
