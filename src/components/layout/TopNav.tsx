@@ -11,7 +11,7 @@ export default function TopNav() {
         <div className="flex items-center gap-2">
           <SidebarTrigger />
           <Link to="/dashboard" className="flex items-center gap-3">
-            <img src="/lovable-uploads/93e9ad14-7e94-4cab-950f-8774ac630d1d.png" alt="Logo Guarnicé Frotas" className="h-8 w-auto" />
+            <img src="/lovable-uploads/e44b57e6-caa7-4e2f-943b-435ef2a4b858.png" alt="Guarnicé Frotas - logotipo oficial" className="h-8 w-auto" />
             <span className="font-semibold">Guarnicé Frotas</span>
           </Link>
         </div>
