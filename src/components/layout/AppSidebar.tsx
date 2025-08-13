@@ -58,7 +58,7 @@ export default function AppSidebar() {
   };
 
 const linkCls = ({ isActive }: { isActive: boolean }) =>
-    (isActive ? "bg-muted text-primary font-medium" : "hover:bg-muted/50") + " flex items-center gap-2";
+    (isActive ? "bg-muted text-primary font-medium" : "hover:bg-muted/50") + " flex items-center gap-3 py-3 text-base";
 
   return (
     <Sidebar>
@@ -71,7 +71,7 @@ const linkCls = ({ isActive }: { isActive: boolean }) =>
                 <SidebarMenuItem key={item.url}>
                   <SidebarMenuButton asChild>
                     <NavLink to={item.url} end className={linkCls}>
-                      <item.icon className="h-4 w-4 text-current" aria-hidden="true" />
+                      <item.icon className="h-5 w-5 text-current" aria-hidden="true" />
                       {!collapsed && <span>{item.title}</span>}
                     </NavLink>
                   </SidebarMenuButton>
