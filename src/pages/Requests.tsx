@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import { listAll, addItem } from "@/services/localdb";
 import { SolicitacaoVeiculo, Veiculo } from "@/services/types";
@@ -144,10 +145,15 @@ export default function Requests() {
           )}
         </section>
 
-        {showForm && (
-          <section className="mt-6">
-            <h2 className="text-xl font-medium mb-3">Nova Solicitação</h2>
-            <form onSubmit={submit} className="space-y-4 bg-card border rounded-lg p-6">
+        <Dialog open={showForm} onOpenChange={setShowForm}>
+          <DialogContent aria-describedby="nova-solicitacao-desc">
+            <DialogHeader>
+              <DialogTitle>Nova Solicitação</DialogTitle>
+              <DialogDescription id="nova-solicitacao-desc">
+                Preencha os dados para solicitar o uso do veículo.
+              </DialogDescription>
+            </DialogHeader>
+            <form onSubmit={submit} className="space-y-4">
               <div>
                 <label className="text-sm text-muted-foreground">Veículo</label>
                 <Select value={form.veiculoId} onValueChange={(v) => setForm({ ...form, veiculoId: v })}>
@@ -180,8 +186,8 @@ export default function Requests() {
                 <Button type="button" variant="secondary" onClick={() => setShowForm(false)}>Cancelar</Button>
               </div>
             </form>
-          </section>
-        )}
+          </DialogContent>
+        </Dialog>
       </main>
     </div>
   );
