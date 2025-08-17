@@ -24,7 +24,7 @@ export default function UsersPage() {
           { key: "celular", label: "Celular", type: "text" },
           { key: "perfil", label: "Perfil", type: "select", options: [
             { label: "Admin", value: "administrador" },
-            { label: "Usuário", value: "servidor" },
+            { label: "Usuário", value: "usuario" },
           ] },
           { key: "status", label: "Status da Conta", type: "select", options: [
             { label: "Ativo", value: "ativo" },

@@ -1,4 +1,4 @@
-export type PerfilAcesso = "administrador" | "servidor" | "motorista" | "gestor";
+export type PerfilAcesso = "administrador" | "usuario" | "motorista" | "gestor";
 
 export interface BaseEntity {
   id: string;
