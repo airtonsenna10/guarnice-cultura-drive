@@ -9,19 +9,28 @@ export default function UsersPage() {
         storageKey="usuarios"
         title="Usuários"
         columns={[
-          { key: "login", label: "Login" },
           { key: "nome", label: "Nome" },
+          { key: "login", label: "Email" },
+          { key: "cpf", label: "CPF" },
+          { key: "celular", label: "Celular" },
           { key: "perfil", label: "Perfil" },
+          { key: "status", label: "Status da Conta" },
+          { key: "fotoPerfil", label: "Foto de Perfil" },
         ]}
         fields={[
-          { key: "login", label: "Login", type: "text" },
           { key: "nome", label: "Nome", type: "text" },
+          { key: "login", label: "Email", type: "text" },
+          { key: "cpf", label: "CPF", type: "text" },
+          { key: "celular", label: "Celular", type: "text" },
           { key: "perfil", label: "Perfil", type: "select", options: [
-            { label: "Administrador", value: "administrador" },
-            { label: "Servidor", value: "servidor" },
-            { label: "Motorista", value: "motorista" },
-            { label: "Gestor", value: "gestor" },
+            { label: "Admin", value: "administrador" },
+            { label: "Usuário", value: "servidor" },
           ] },
+          { key: "status", label: "Status da Conta", type: "select", options: [
+            { label: "Ativo", value: "ativo" },
+            { label: "Inativo", value: "inativo" },
+          ] },
+          { key: "fotoPerfil", label: "Foto de Perfil (URL)", type: "text" },
           { key: "senha", label: "Senha (será armazenada como hash)", type: "text" },
         ]}
         transformOnSave={async (data: any) => {

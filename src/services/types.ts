@@ -25,9 +25,13 @@ export interface Servidor extends BaseEntity {
 }
 
 export interface Usuario extends BaseEntity {
-  login: string;
+  login: string; // usado como email
   nome: string;
+  cpf: string;
+  celular: string;
   perfil: PerfilAcesso;
+  status: "ativo" | "inativo";
+  fotoPerfil?: string;
   senhaHash: string;
 }
 
