@@ -11,15 +11,18 @@ export default function ServersPage() {
           { key: "nome", label: "Nome" },
           { key: "matricula", label: "Matrícula" },
           { key: "setor", label: "Setor" },
-          { key: "cargo", label: "Cargo" },
-          { key: "contato", label: "Contato" },
+          { key: "perfil", label: "Perfil" },
         ]}
         fields={[
           { key: "nome", label: "Nome", type: "text" },
           { key: "matricula", label: "Matrícula", type: "text" },
           { key: "setor", label: "Setor", type: "text" },
-          { key: "cargo", label: "Cargo", type: "text" },
-          { key: "contato", label: "Contato", type: "text" },
+          { key: "perfil", label: "Perfil", type: "select", options: [
+            { label: "Admin", value: "administrador" },
+            { label: "Usuário", value: "usuario" },
+            { label: "Motorista", value: "motorista" },
+            { label: "Gestor", value: "gestor" },
+          ] },
         ]}
       />
     </div>
