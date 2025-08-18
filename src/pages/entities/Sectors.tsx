@@ -9,12 +9,10 @@ export default function SectorsPage() {
         title="Setores"
         columns={[
           { key: "nome", label: "Nome" },
-          { key: "responsavel", label: "Responsável" },
           { key: "descricao", label: "Descrição" },
         ]}
         fields={[
           { key: "nome", label: "Nome do Setor", type: "text" },
-          { key: "responsavel", label: "Responsável", type: "text" },
           { key: "descricao", label: "Descrição", type: "textarea" },
         ]}
       />
