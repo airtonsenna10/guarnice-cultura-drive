@@ -8,20 +8,24 @@ export default function MaintenancePage() {
         storageKey="manutencoes"
         title="Manutenções"
         columns={[
-          { key: "tipo", label: "Tipo" },
+          { key: "veiculo", label: "Veículo" },
+          { key: "tipoManutencao", label: "Tipo de Manutenção" },
           { key: "descricao", label: "Descrição" },
-          { key: "veiculoId", label: "Veículo (ID)" },
-          { key: "data", label: "Data" },
-          { key: "custo", label: "Custo" },
-          { key: "fornecedor", label: "Fornecedor" },
+          { key: "dataInicio", label: "Data Início" },
+          { key: "dataFim", label: "Data Fim" },
+          { key: "statusManutencao", label: "Status da Manutenção" },
         ]}
         fields={[
-          { key: "tipo", label: "Tipo", type: "text" },
+          { key: "veiculo", label: "Veículo", type: "text" },
+          { key: "tipoManutencao", label: "Tipo de Manutenção", type: "text" },
           { key: "descricao", label: "Descrição", type: "textarea" },
-          { key: "veiculoId", label: "Veículo (ID)", type: "text" },
-          { key: "data", label: "Data", type: "date" },
-          { key: "custo", label: "Custo", type: "number" },
-          { key: "fornecedor", label: "Fornecedor", type: "text" },
+          { key: "dataInicio", label: "Data Início", type: "date" },
+          { key: "dataFim", label: "Data Fim", type: "date" },
+          { key: "statusManutencao", label: "Status da Manutenção", type: "select", options: [
+            { label: "Concluída", value: "concluida" },
+            { label: "Em andamento", value: "em_andamento" },
+            { label: "Cancelada", value: "cancelada" },
+          ] },
         ]}
       />
     </div>
