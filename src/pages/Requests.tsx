@@ -122,6 +122,7 @@ export default function Requests() {
                   <TableHead>Veículo</TableHead>
                   <TableHead>Data</TableHead>
                   <TableHead>Status</TableHead>
+                  <TableHead>Motivo da Rejeição</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -135,6 +136,7 @@ export default function Requests() {
                       <TableCell>
                         <Badge variant={statusVariant[s.status]}>{statusText[s.status]}</Badge>
                       </TableCell>
+                      <TableCell>{s.status === "rejeitada" ? (s.justificativa || "—") : "—"}</TableCell>
                     </TableRow>
                   );
                 })}
